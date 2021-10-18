@@ -1,5 +1,4 @@
-# WOTM
-What's On The Menu!
+# WOTM - What's On The Menu!
 
 Application: WOTM - What's On The Menu!
 Created By: Kelv Gooding

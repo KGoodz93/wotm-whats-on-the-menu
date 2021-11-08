@@ -16,6 +16,8 @@ View Menu is a feature which shows all meals (Breakfast / Dinner) and Baking, wh
 
 ## Scratchpad
 
+Scratchpad is a feature whoch allows the user to add in items or ingredients which are needed throughout the week. There are 3 columns for Quantity, Item and Price. Once entered into the entry, "Add" will add this row into the connected Database. When selecting an item or ingredient, "Delete" will remove the row from the Database.
+
 ![Screenshot 2021-11-08 16 03 16](https://user-images.githubusercontent.com/82043281/140820165-558de39a-c59f-4f18-81c4-773969cbc5b5.png)
 
 ## Generate Shopping

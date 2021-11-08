@@ -1,6 +1,6 @@
 # WOTM - What's On The Menu!
 
-** About **
+**About**
 
 WOTM (What's On The Menu) is an application which help choose meals automatically and lists the required ingredients. This then generates a shopping list for you to take to your local supermarket. The idea behind this application is to make easier and more convient when decided what to cook, and what igredients are required. This also has a scratchpad feature to add items or ingredients during the week which are also needed from your shop.
 
@@ -12,10 +12,10 @@ WOTM (What's On The Menu) is an application which help choose meals automaticall
 
 ![Screenshot 2021-11-08 15 33 15](https://user-images.githubusercontent.com/82043281/140820161-7a2aa42a-ff67-4144-af01-23111cc34c92.png)
 
-** Scratchpad **
+**Scratchpad**
 
 ![Screenshot 2021-11-08 16 03 16](https://user-images.githubusercontent.com/82043281/140820165-558de39a-c59f-4f18-81c4-773969cbc5b5.png)
 
-** Generate Shopping **
+**Generate Shopping**
 
 ![Screenshot 2021-11-08 16 03 26](https://user-images.githubusercontent.com/82043281/140820168-7a7564c2-f12f-4864-9dc9-59e7b2ee3e2e.png)

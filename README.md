@@ -22,4 +22,6 @@ Scratchpad is a feature whoch allows the user to add in items or ingredients whi
 
 ## Generate Shopping
 
+Generate Shopping is the feature which will choose 4 meals from the dinner menu automatically once this button is clicked. The ingredients for these meals will be added into the treeview. This will also show the estimated price and total items within this list. "Generate Shopping" button will save this shopping list into a text file, ready to take on your food shop, including the quantity and ingredient/item name.
+
 ![Screenshot 2021-11-08 16 03 26](https://user-images.githubusercontent.com/82043281/140820168-7a7564c2-f12f-4864-9dc9-59e7b2ee3e2e.png)

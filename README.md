@@ -8,14 +8,14 @@ WOTM (What's On The Menu) is an application which help choose meals automaticall
 
 ![Screenshot 2021-11-08 15 32 49](https://user-images.githubusercontent.com/82043281/140820157-9f397ff0-a700-4ce6-b100-712b3986ae64.png)
 
-**View Menu**
+### View Menu
 
 ![Screenshot 2021-11-08 15 33 15](https://user-images.githubusercontent.com/82043281/140820161-7a2aa42a-ff67-4144-af01-23111cc34c92.png)
 
-**Scratchpad**
+### Scratchpad
 
 ![Screenshot 2021-11-08 16 03 16](https://user-images.githubusercontent.com/82043281/140820165-558de39a-c59f-4f18-81c4-773969cbc5b5.png)
 
-**Generate Shopping**
+### Generate Shopping
 
 ![Screenshot 2021-11-08 16 03 26](https://user-images.githubusercontent.com/82043281/140820168-7a7564c2-f12f-4864-9dc9-59e7b2ee3e2e.png)

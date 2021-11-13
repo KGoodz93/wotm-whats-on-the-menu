@@ -12,16 +12,16 @@ This is the main application window on launch. This will allow the user the navi
 
 View Menu is a feature which shows all meals (Breakfast / Dinner) and Baking, which are available in WOTM. This is for viewing purposong only.
 
-![Screenshot 2021-11-08 15 33 15](https://user-images.githubusercontent.com/82043281/140820161-7a2aa42a-ff67-4144-af01-23111cc34c92.png)
+<img width="447" alt="Screenshot 2021-11-12 23 57 47" src="https://user-images.githubusercontent.com/82043281/141597560-54976749-ec59-41c5-8bca-ed43af971559.png">
 
 ## Scratchpad
 
 Scratchpad is a feature whoch allows the user to add in items or ingredients which are needed throughout the week. There are 3 columns for Quantity, Item and Price. Once entered into the entry, "Add" will add this row into the connected Database. When selecting an item or ingredient, "Delete" will remove the row from the Database.
 
-![Screenshot 2021-11-08 16 03 16](https://user-images.githubusercontent.com/82043281/140820165-558de39a-c59f-4f18-81c4-773969cbc5b5.png)
+<img width="447" alt="Screenshot 2021-11-12 23 57 18" src="https://user-images.githubusercontent.com/82043281/141597568-09b2daa7-68a3-4784-8be4-a53685c52177.png">
 
 ## Generate Shopping
 
 Generate Shopping is the feature which will choose 4 meals from the dinner menu automatically once this button is clicked. The ingredients for these meals will be added into the treeview. This will also show the estimated price and total items within this list. "Generate Shopping" button will save this shopping list into a text file, ready to take on your food shop, including the quantity and ingredient/item name.
 
-![Screenshot 2021-11-08 16 03 26](https://user-images.githubusercontent.com/82043281/140820168-7a7564c2-f12f-4864-9dc9-59e7b2ee3e2e.png)
+<img width="447" alt="Screenshot 2021-11-12 23 57 04" src="https://user-images.githubusercontent.com/82043281/141597587-01db9126-e3fe-4011-93c0-493cbb3835f5.png">

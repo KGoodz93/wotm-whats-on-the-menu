@@ -13,7 +13,7 @@ import os
 user = os.getlogin()
 db = os.path.join(r"C:\Users\{}\Dropbox\Programming\Databases\wotmdb.db").format(user)
 today = datetime.datetime.today().strftime("%Y%m%d")
-verno = (str(2.000))
+verno = (str(2.001))
 count = 0
 
 # Database Connection
@@ -26,7 +26,7 @@ def window_viewmenu():
     # Tkinter Config
 
     root2 = Tk()
-    root2.geometry("700x425")
+    root2.geometry("580x420")
     #root2.iconbitmap(".ico)
     root2.title("WOTM - View Menu")
     root2.configure(bg="#B8D8D8")
@@ -91,7 +91,7 @@ def window_scratchpad():
     # Tkinter Config
 
     root3 = Tk()
-    root3.geometry("700x425")
+    root3.geometry("580x420")
     #root3.iconbitmap(".ico)
     root3.title("WOTM - Scratchpad")
     root3.configure(bg="#B8D8D8")
@@ -218,7 +218,7 @@ def window_generateshopping():
     # Tkinter Config
 
     root4 = Tk()
-    root4.geometry("700x425")
+    root4.geometry("580x420")
     #root4.iconbitmap(".ico)
     root4.title("WOTM - Generate Shopping")
     root4.configure(bg="#B8D8D8")
@@ -263,8 +263,6 @@ def window_generateshopping():
         connection.commit()
         estcost()
         itemcount()
-        messagebox.showinfo("WOTM - Generate Shopping", "Item has been removed.")
-
     estcost()
     itemcount()
 

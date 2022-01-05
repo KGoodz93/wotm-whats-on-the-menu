@@ -6,22 +6,22 @@ WOTM (What's On The Menu) is an application which help choose meals automaticall
 
 This is the main application window on launch. This will allow the user the navigate to other features within the application.
 
-![Screenshot 2021-11-08 15 32 49](https://user-images.githubusercontent.com/82043281/140820157-9f397ff0-a700-4ce6-b100-712b3986ae64.png)
+![main](https://user-images.githubusercontent.com/82043281/148290853-a6150668-31a6-4414-a4c6-e147c4f85e58.png)
 
 ## View Menu
 
-View Menu is a feature which shows all meals (Breakfast / Dinner) and Baking, which are available in WOTM. This is for viewing purposong only.
+View Menu is a feature which shows all meals (Breakfast / Dinner) and Baking, which are available in WOTM. This is for viewing purposes only.
 
-<img width="447" alt="Screenshot 2021-11-12 23 57 47" src="https://user-images.githubusercontent.com/82043281/141597560-54976749-ec59-41c5-8bca-ed43af971559.png">
+![view_menu](https://user-images.githubusercontent.com/82043281/148290890-f7a3f755-f1f1-479d-9ca2-f17caafa374c.png)
 
 ## Scratchpad
 
 Scratchpad is a feature whoch allows the user to add in items or ingredients which are needed throughout the week. There are 3 columns for Quantity, Item and Price. Once entered into the entry, "Add" will add this row into the connected Database. When selecting an item or ingredient, "Delete" will remove the row from the Database.
 
-<img width="447" alt="Screenshot 2021-11-12 23 57 18" src="https://user-images.githubusercontent.com/82043281/141597568-09b2daa7-68a3-4784-8be4-a53685c52177.png">
+![scratchpad](https://user-images.githubusercontent.com/82043281/148290912-b9277245-91fc-4960-8b95-d72a11c9f513.png)
 
 ## Generate Shopping
 
-Generate Shopping is the feature which will choose 4 meals from the dinner menu automatically once this button is clicked. The ingredients for these meals will be added into the treeview. This will also show the estimated price and total items within this list. "Generate Shopping" button will save this shopping list into a text file, ready to take on your food shop, including the quantity and ingredient/item name.
+Generate Shopping is the feature which will choose 6 meals from the dinner menu automatically once this button is clicked. The ingredients for these meals will be added into the database and viewed in the treeview table. This will also show the estimated price and total items within this list. "Generate Shopping" button will prompt if the user would like an email to be sent. Ready to take on your food shop, including the quantity and ingredient/item name.
 
-<img width="447" alt="Screenshot 2021-11-12 23 57 04" src="https://user-images.githubusercontent.com/82043281/141597587-01db9126-e3fe-4011-93c0-493cbb3835f5.png">
+![generate_shopping](https://user-images.githubusercontent.com/82043281/148290925-875c5e15-200f-416c-8401-52b0eccaf8db.png)

@@ -6,7 +6,7 @@ WOTM (What's On The Menu) is an application which help choose meals automaticall
 
 This is the main application window on launch. This will allow the user the navigate to other features within the application.
 
-![main](https://user-images.githubusercontent.com/82043281/148290853-a6150668-31a6-4414-a4c6-e147c4f85e58.png)
+![Screenshot 2022-05-30 140255](https://user-images.githubusercontent.com/82043281/170998069-e289b15e-01d0-40c8-a60b-a5c98f518081.png)
 
 ## View Menu
 

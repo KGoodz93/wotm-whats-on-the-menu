@@ -12,13 +12,13 @@ This is the main application window on launch. This will allow the user the navi
 
 View Menu is a feature which shows all meals (Breakfast / Dinner) and Baking, which are available in WOTM. This is for viewing purposes only.
 
-![view_menu](https://user-images.githubusercontent.com/82043281/148290890-f7a3f755-f1f1-479d-9ca2-f17caafa374c.png)
+![Screenshot 2022-05-30 140437](https://user-images.githubusercontent.com/82043281/170998344-e4a959cb-80cf-416f-b03c-ec3329c1ffe8.png)
 
-## Scratchpad
+## View Items
 
-Scratchpad is a feature whoch allows the user to add in items or ingredients which are needed throughout the week. There are 3 columns for Quantity, Item and Price. Once entered into the entry, "Add" will add this row into the connected Database. When selecting an item or ingredient, "Delete" will remove the row from the Database.
+View Items is a feature which allows the user to add in items or ingredients which are needed throughout the week. There are 3 columns for Quantity, Item and Price. Once entered into the entry, "Add" will add this row into the connected Database. When selecting an item or ingredient, "Delete" will remove the row from the Database.
 
-![scratchpad](https://user-images.githubusercontent.com/82043281/148290912-b9277245-91fc-4960-8b95-d72a11c9f513.png)
+![Screenshot 2022-05-30 140530](https://user-images.githubusercontent.com/82043281/170998468-3f155759-1e16-4e4a-87c3-1fbbb857cf99.png)
 
 ## Generate Shopping
 

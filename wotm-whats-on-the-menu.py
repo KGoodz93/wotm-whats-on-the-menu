@@ -8,17 +8,22 @@ import sqlite3
 import win32com.client as win32
 import os.path
 import time
+from configparser import ConfigParser
 
 # Variables
 
+config = ConfigParser()
+config.read(r'config.ini')
 user = os.getlogin()
+
+verno = config.get('APP', 'version')
+mailbox = config.get('CONTACTS', 'mailbox')
+
 path = fr"C:/Users/{user}/Dropbox/Dev/Python/Projects/WOTM - What's On The Menu/"
 db = r"\\192.168.1.97\shared-snowmoon\database\wotm_goodikel.db"
 today = datetime.datetime.today().strftime("%Y%m%d")
-verno = (str(2.015))
 count = 0
 file2 = fr"C:/Users/{user}/Dropbox/Dev/Python/Projects/WOTM - What's On The Menu/logs/wotm_shopping_{today}.txt"
-mailbox = "kelvingooding@msn.com"
 modTimesinceEpoc = os.path.getmtime(db)
 modificationTime = time.strftime('%d/%m/%Y %H:%M', time.localtime(modTimesinceEpoc))
 
@@ -725,23 +730,18 @@ def window_generateshopping():
 
     def generateshopping():
 
-        sql_generateshopping = cursor.execute("select * from _temp;")
-        f = open(file2, "w")
-        f.truncate(0)
-        for i in sql_generateshopping:
-            f.write(str(i[0]) + " | " + (str(i[1])) + "\n")
-        f.close()
+        sql_generateshopping = "select * from _temp;"
+        sql_itemcount = "select (sum(quantity)) from _temp;"
+        sql_estprice = "select ROUND(sum(price),2) from _temp;"
 
-        sql_itemcount = cursor.execute("select (sum(quantity)) from _temp;")
-        f = open(file2, "a")
-        for j in sql_itemcount:
-            f.write("\nNumber of Items: " + str(j[0]))
-
-        sql_estprice = cursor.execute("select ROUND(sum(price),2) from _temp;")
-        f = open(file2, "a")
-        for j in sql_estprice:
-            f.write("\nEstimated Cost: GBP " + str(j[0]))
-        f.close()
+        with open(file2, 'w') as f:
+            f.truncate(0)
+            for i in cursor.execute(sql_generateshopping):
+                f.write(str(i[0]) + " | " + (str(i[1])) + "\n")
+            for j in cursor.execute(sql_itemcount):
+                f.write("\nNumber of Items: " + str(j[0]))
+                for k in cursor.execute(sql_estprice):
+                    f.write("\nEstimated Cost: GBP " + str(k[0]))
 
         def file_meals():
             return (str(f"---| Dinner Menu |---\n\n"

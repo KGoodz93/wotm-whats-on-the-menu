@@ -16,8 +16,8 @@ config = ConfigParser()
 config.read(r'config.ini')
 user = os.getlogin()
 
-verno = config.get('App', 'version')
-mailbox = config.get('Contacts', 'mailbox')
+verno = config.get('APP', 'version')
+mailbox = config.get('CONTACTS', 'mailbox')
 
 path = fr"C:/Users/{user}/Dropbox/Dev/Python/Projects/WOTM - What's On The Menu/"
 db = r"\\192.168.1.97\shared-snowmoon\database\wotm_goodikel.db"

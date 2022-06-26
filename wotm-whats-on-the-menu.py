@@ -13,19 +13,19 @@ from configparser import ConfigParser
 # Variables
 
 config = ConfigParser()
-config.read(r'config.ini')
+config.read(r'../config.ini')
 user = os.getlogin()
 
-verno = config.get('APP', 'version')
-mailbox = config.get('CONTACTS', 'mailbox')
+verno = config.get('App', 'version')
+mailbox = config.get('Contacts', 'mailbox')
 
 path = fr"C:/Users/{user}/Dropbox/Dev/Python/Projects/WOTM - What's On The Menu/"
 db = r"\\192.168.1.97\shared-snowmoon\database\wotm_goodikel.db"
 today = datetime.datetime.today().strftime("%Y%m%d")
 count = 0
-file2 = fr"C:/Users/{user}/Dropbox/Dev/Python/Projects/WOTM - What's On The Menu/logs/wotm_shopping_{today}.txt"
 modTimesinceEpoc = os.path.getmtime(db)
 modificationTime = time.strftime('%d/%m/%Y %H:%M', time.localtime(modTimesinceEpoc))
+linebreak = "\n"
 
 # Database Connection
 
@@ -190,46 +190,31 @@ def window_viewmeals():
             meal_type = cbox1.get()
             meal_entry = ebox1.get()
 
-            S11 = quantity_ebox1.get()
-            S12 = item_ebox1.get()
-            S13 = price_ebox1.get()
+            class GetEntryDetails:
+                def __init__(self, quantity, item, price1, price2):
+                    self.quantity = quantity
+                    self.item = item
+                    self.price1 = price1
+                    self.price2 = price2
 
-            S21 = quantity_ebox2.get()
-            S22 = item_ebox2.get()
-            S23 = price_ebox2.get()
+            field1 = GetEntryDetails(quantity_ebox1.get(), item_ebox1.get(), price_ebox1.get(), price_ebox1.get())
+            field2 = GetEntryDetails(quantity_ebox2.get(), item_ebox2.get(), price_ebox2.get(), price_ebox1.get())
+            field3 = GetEntryDetails(quantity_ebox3.get(), item_ebox3.get(), price_ebox3.get(), price_ebox1.get())
+            field4 = GetEntryDetails(quantity_ebox4.get(), item_ebox4.get(), price_ebox4.get(), price_ebox1.get())
+            field5 = GetEntryDetails(quantity_ebox5.get(), item_ebox5.get(), price_ebox5.get(), price_ebox1.get())
+            field6 = GetEntryDetails(quantity_ebox6.get(), item_ebox6.get(), price_ebox6.get(), price_ebox1.get())
+            field7 = GetEntryDetails(quantity_ebox7.get(), item_ebox7.get(), price_ebox7.get(), price_ebox1.get())
+            field8 = GetEntryDetails(quantity_ebox8.get(), item_ebox8.get(), price_ebox8.get(), price_ebox1.get())
 
-            S31 = quantity_ebox3.get()
-            S32 = item_ebox3.get()
-            S33 = price_ebox3.get()
+            cursor.execute(f"INSERT INTO mealitems VALUES (?,?,?,?,?,?)", (field1.quantity, field1.item, field1.price1, field1.price2, meal_entry, meal_type,))
+            cursor.execute(f"INSERT INTO mealitems VALUES (?,?,?,?,?,?)", (field2.quantity, field2.item, field2.price1, field2.price2, meal_entry, meal_type,))
+            cursor.execute(f"INSERT INTO mealitems VALUES (?,?,?,?,?,?)", (field3.quantity, field3.item, field3.price1, field3.price2, meal_entry, meal_type,))
+            cursor.execute(f"INSERT INTO mealitems VALUES (?,?,?,?,?,?)", (field4.quantity, field4.item, field4.price1, field4.price2, meal_entry, meal_type,))
+            cursor.execute(f"INSERT INTO mealitems VALUES (?,?,?,?,?,?)", (field5.quantity, field5.item, field5.price1, field5.price2, meal_entry, meal_type,))
+            cursor.execute(f"INSERT INTO mealitems VALUES (?,?,?,?,?,?)", (field6.quantity, field6.item, field6.price1, field6.price2, meal_entry, meal_type,))
+            cursor.execute(f"INSERT INTO mealitems VALUES (?,?,?,?,?,?)", (field7.quantity, field7.item, field7.price1, field7.price2, meal_entry, meal_type,))
+            cursor.execute(f"INSERT INTO mealitems VALUES (?,?,?,?,?,?)", (field8.quantity, field8.item, field8.price1, field8.price2, meal_entry, meal_type,))
 
-            S41 = quantity_ebox4.get()
-            S42 = item_ebox4.get()
-            S43 = price_ebox4.get()
-
-            S51 = quantity_ebox5.get()
-            S52 = item_ebox5.get()
-            S53 = price_ebox5.get()
-
-            S61 = quantity_ebox6.get()
-            S62 = item_ebox6.get()
-            S63 = price_ebox6.get()
-
-            S71 = quantity_ebox7.get()
-            S72 = item_ebox7.get()
-            S73 = price_ebox7.get()
-
-            S81 = quantity_ebox8.get()
-            S82 = item_ebox8.get()
-            S83 = price_ebox8.get()
-
-            cursor.execute(f"INSERT INTO mealitems VALUES (?,?,?,?,?,?)", (S11, S12, S13, S13, meal_entry, meal_type,))
-            cursor.execute(f"INSERT INTO mealitems VALUES (?,?,?,?,?,?)", (S21, S22, S23, S23, meal_entry, meal_type,))
-            cursor.execute(f"INSERT INTO mealitems VALUES (?,?,?,?,?,?)", (S31, S32, S33, S33, meal_entry, meal_type,))
-            cursor.execute(f"INSERT INTO mealitems VALUES (?,?,?,?,?,?)", (S41, S42, S43, S43, meal_entry, meal_type,))
-            cursor.execute(f"INSERT INTO mealitems VALUES (?,?,?,?,?,?)", (S51, S52, S53, S53, meal_entry, meal_type,))
-            cursor.execute(f"INSERT INTO mealitems VALUES (?,?,?,?,?,?)", (S61, S62, S63, S63, meal_entry, meal_type,))
-            cursor.execute(f"INSERT INTO mealitems VALUES (?,?,?,?,?,?)", (S71, S72, S73, S73, meal_entry, meal_type,))
-            cursor.execute(f"INSERT INTO mealitems VALUES (?,?,?,?,?,?)", (S81, S82, S83, S83, meal_entry, meal_type,))
             cursor.execute(f"DELETE FROM mealitems WHERE item = '' or item is null")
             connection.commit()
 
@@ -717,44 +702,29 @@ def window_generateshopping():
         Label(frame3_labelframe, width=40, bg="#B8D8D8", text=f"Meal 5: {items5[0]}", font="arial 10 bold").grid(column=0, row=5)
 
     def price():
-        sql_price = cursor.execute("select printf('%.2f', ROUND(sum(price),2)) from _temp;")
 
-        for item in sql_price:
+        for item in cursor.execute("select printf('%.2f', ROUND(sum(price),2)) from _temp;"):
             Label(frame3_labelframe, width=40, bg="#B8D8D8", font="arial 10", text=f"\n\nEstimated Cost: £{str(item[0])}").grid(column=0, row=8)
 
     def item_count():
-        sql_item_count = cursor.execute("select (sum(quantity)) from _temp;")
 
-        for item in sql_item_count:
+        for item in cursor.execute("select (sum(quantity)) from _temp;"):
             Label(frame3_labelframe, width=40, bg="#B8D8D8", font="arial 10", text=f"Total Items: {str(item[0])}").grid(column=0, row=9)
 
     def generateshopping():
 
-        sql_generateshopping = "select * from _temp;"
-        sql_itemcount = "select (sum(quantity)) from _temp;"
-        sql_estprice = "select ROUND(sum(price),2) from _temp;"
-
-        with open(file2, 'w') as f:
-            f.truncate(0)
-            for i in cursor.execute(sql_generateshopping):
-                f.write(str(i[0]) + " | " + (str(i[1])) + "\n")
-            for j in cursor.execute(sql_itemcount):
-                f.write("\nNumber of Items: " + str(j[0]))
-                for k in cursor.execute(sql_estprice):
-                    f.write("\nEstimated Cost: GBP " + str(k[0]))
-
         def file_meals():
-            return (str(f"---| Dinner Menu |---\n\n"
-                        f"Meal 1: {items1[0]}\n"
+            return (str(f"Meal 1: {items1[0]}\n"
                         f"Meal 2: {items2[0]}\n"
                         f"Meal 3: {items3[0]}\n"
                         f"Meal 4: {items4[0]}\n"
                         f"Meal 5: {items5[0]}"))
 
         def file_item():
-            with open(file2, "r") as readdata:
-                text = readdata.read()
-            return text
+            all_items = []
+            for i in cursor.execute("select * from _temp;"):
+                all_items.append(f"{i[0]} | {i[1]}")
+            return all_items[:-1]
 
         def end():
             mail = messagebox.askyesno("WOTM - Generate Shopping", f"Would you like this emailed to {mailbox}?")
@@ -764,16 +734,14 @@ def window_generateshopping():
                 mail.To = f"{mailbox}"
                 mail.Subject = "WOTM - Your meals and shopping list for this week!"
                 mail.Body = f"Hi {user}!" \
-                            f"\n\nHere are the meals WOTM has selected for this week:" \
-                            f"\n\n{file_meals()}\n\n" \
-                            f"And here are the item you need this week:" \
-                            f"\n\n{file_item()}"
+                            f"\n\nHere are the meals WOTM has selected for this week:\n\n" \
+                            f"{file_meals()}" \
+                            f"\n\nAnd here are the item you need this week:" \
+                            f"\n{linebreak}{linebreak.join(file_item())}"
                 mail.Send()
                 messagebox.showinfo("WOTM - Generate Shopping", "Your shopping list has been generated!")
                 root4.destroy()
                 root1.destroy()
-
-                # Delete data from _temp and _scratchpad table.
 
                 cursor.execute("delete from _temp;")
                 connection.commit()
@@ -800,9 +768,7 @@ def window_generateshopping():
 
         # Refresh Treeview
 
-        shopping_list = cursor.execute("select quantity, item, printf('%.2f', quantity * r_price) as price, r_price, rowid from _temp;")
-
-        for item in shopping_list:
+        for item in cursor.execute("select quantity, item, printf('%.2f', quantity * r_price) as price, r_price, rowid from _temp;"):
             tree.insert(parent="", index="end", iid=count, text="", values=(item[0], item[1], f"£{item[2]}", item[4]))
             count += 1
 
@@ -833,9 +799,7 @@ def window_generateshopping():
 
         # Refresh Treeview
 
-        shopping_list = cursor.execute("select quantity, item, printf('%.2f', quantity * r_price) as price, r_price, rowid from _temp;")
-
-        for item in shopping_list:
+        for item in cursor.execute("select quantity, item, printf('%.2f', quantity * r_price) as price, r_price, rowid from _temp;"):
             tree.insert(parent="", index="end", iid=count, text="", values=(item[0], item[1], f"£{item[2]}", item[4]))
             count += 1
 
@@ -843,7 +807,6 @@ def window_generateshopping():
 
         price()
         item_count()
-
 
     # Refresh Data
 
@@ -884,9 +847,7 @@ def window_generateshopping():
 
     global count
 
-    sql_shoppinglist = cursor.execute("select quantity, item, printf('%.2f', quantity * r_price) as price, r_price, rowid from _temp;")
-
-    for item in sql_shoppinglist:
+    for item in cursor.execute("select quantity, item, printf('%.2f', quantity * r_price) as price, r_price, rowid from _temp;"):
         tree.insert(parent="", index="end", iid=count, text="", values=(item[0], item[1], f"£{item[2]}", item[4]))
         count += 1
 

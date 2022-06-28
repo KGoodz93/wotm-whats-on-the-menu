@@ -3,7 +3,7 @@
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
-import datetime
+from datetime import datetime
 import sqlite3
 import win32com.client as win32
 import os.path
@@ -20,8 +20,8 @@ verno = config.get('App', 'version')
 mailbox = config.get('Contacts', 'mailbox')
 
 path = fr"C:/Users/{user}/Dropbox/Dev/Python/Projects/WOTM - What's On The Menu/"
-db = r"db/wotm_goodikel.db"
-today = datetime.datetime.today().strftime("%Y%m%d")
+db = r"\\192.168.1.97\shared-snowmoon\database\wotm_goodikel.db"
+today = datetime.today().strftime("%Y%m%d")
 count = 0
 modTimesinceEpoc = os.path.getmtime(db)
 modificationTime = time.strftime('%d/%m/%Y %H:%M', time.localtime(modTimesinceEpoc))
@@ -642,7 +642,7 @@ def window_generateshopping():
     frame1 = Frame(root4, padx=5, pady=5, bg="#B8D8D8")
     frame2 = Frame(root4, padx=5, pady=5, bg="#B8D8D8")
     frame3 = Frame(root4, padx=5, pady=5, bg="#B8D8D8")
-    frame3_labelframe = LabelFrame(frame3, text="Meal Options", bg="#B8D8D8", pady=14)
+    frame3.grid(column=0, row=0, padx=1, pady=5)
 
     # External UI
 
@@ -695,12 +695,13 @@ def window_generateshopping():
 
         # Labels
 
-        Label(frame3_labelframe, width=40, bg="#B8D8D8", text=f"Meal 1: {items1[0]}\n", font="arial 10 bold").grid(column=0, row=1)
-        Label(frame3_labelframe, width=40, bg="#B8D8D8", text=f"Meal 2: {items2[0]}\n", font="arial 10 bold").grid(column=0, row=2)
-        Label(frame3_labelframe, width=40, bg="#B8D8D8", text=f"Meal 3: {items3[0]}\n", font="arial 10 bold").grid(column=0, row=3)
-        Label(frame3_labelframe, width=40, bg="#B8D8D8", text=f"Meal 4: {items4[0]}\n", font="arial 10 bold").grid(column=0, row=4)
-        Label(frame3_labelframe, width=40, bg="#B8D8D8", text=f"Meal 5: {items5[0]}", font="arial 10 bold").grid(column=0, row=5)
+        Label(frame3, bg="#FFFFFF", width=40, height=4, text=f"{items1[0]}").grid(column=0, row=0, pady=7, padx=35)
+        Label(frame3, bg="#FFFFFF", width=40, height=4, text=f"{items2[0]}").grid(column=0, row=1, pady=7, padx=35)
+        Label(frame3, bg="#FFFFFF", width=40, height=4, text=f"{items3[0]}").grid(column=0, row=2, pady=7, padx=35)
+        Label(frame3, bg="#FFFFFF", width=40, height=4, text=f"{items4[0]}").grid(column=0, row=3, pady=7, padx=35)
+        Label(frame3, bg="#FFFFFF", width=40, height=4, text=f"{items5[0]}").grid(column=0, row=4, pady=7, padx=35)
 
+    """
     def price():
 
         for item in cursor.execute("select printf('%.2f', ROUND(sum(price),2)) from _temp;"):
@@ -710,6 +711,7 @@ def window_generateshopping():
 
         for item in cursor.execute("select (sum(quantity)) from _temp;"):
             Label(frame3_labelframe, width=40, bg="#B8D8D8", font="arial 10", text=f"Total Items: {str(item[0])}").grid(column=0, row=9)
+    """
 
     def generateshopping():
 
@@ -805,14 +807,14 @@ def window_generateshopping():
 
         # Refresh Item Count and Price
 
-        price()
-        item_count()
+        #price()
+        #item_count()
 
     # Refresh Data
 
     meal_data()
-    price()
-    item_count()
+    #price()
+    #item_count()
 
     # Widgets
 
@@ -912,8 +914,7 @@ def window_generateshopping():
     frame1.grid(column=1, row=0, pady=25)
     tree.grid(column=0, row=0)
     frame2.grid(column=0, row=1, columnspan=3, padx=1, pady=2)
-    frame3.grid(column=0, row=0, padx=1, pady=5)
-    frame3_labelframe.grid(column=0, row=0, padx=20, pady=5)
+
 
     root4.mainloop()
 
